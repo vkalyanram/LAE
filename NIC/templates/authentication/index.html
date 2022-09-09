@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="container">
+  {% for message in messages %}
+   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Message:</strong> {{message}}  
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    {% endfor %}
+
+    <h3>Welcome to VVGroup!</h3>
+
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <button type="submit" ><a href="/signout">SignOut</a></button>
+    {% else %}
+    <button type="submit" ><a href="/signup">SignUp</a></button>
+    <br/>
+    <br/>
+    <button type="submit" ><a href="/signin">SignIn</a></button>
+    {% endif %}
+
+</div>
+{% endblock %} 
+
+
+
+
+
+
+
+
+
+
+
